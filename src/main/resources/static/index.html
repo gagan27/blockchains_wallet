@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Block Chain Console</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body onload="getAllAgents()">
+<script src="js/display.js"></script>
+<script src="js/restClient.js"></script>
+<h1>Block Chain Demo</h1>
+<hr>
+
+<p>
+    <button type="button" class="button" id="addAgent" onclick="createAgent()">New Agent</button>
+    <button type="button" id="getAll" onclick="getAllAgents()" class="button">Refresh All</button>
+    <button type="button" class="button" id="delAllAgent" onclick="deleteAllAgents()">Delete All Agents</button>
+</p>
+
+<hr>
+<p id="msg" class="msg">
+    Empty.
+</p>
+
+<table id="output">
+</table>
+
+<!-- <div data-role="popup" id="myPopup1" class="ui-content" style="min-width:250px;">
+      <form method="post" action="/action_page_post.php">
+        <div>
+          <h3>Login information</h3>
+          <label for="usrnm" class="ui-hidden-accessible">Username:</label>
+          <input type="text" name="user" id="usrnm" placeholder="Username">
+          <label for="pswd" class="ui-hidden-accessible">Password:</label>
+          <input type="password" name="passw" id="pswd" placeholder="Password">
+          <label for="log">Keep me logged in</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <input type="submit" data-inline="true" value="Log in">
+        </div>
+      </form>
+    </div> -->
+    
+    
+    <!--  div id="myPopup1" class="ui-content" style="min-width:250px;" visible="false">
+      <form method="post" action="/action_page_post.php">
+        <div>
+          <h3>Login information</h3>
+          <label for="usrnm" class="ui-hidden-accessible">Username:</label>
+          <input type="text" name="user" id="usrnm" placeholder="Username">
+          <label for="pswd" class="ui-hidden-accessible">Password:</label>
+          <input type="password" name="passw" id="pswd" placeholder="Password">
+          <label for="log">Keep me logged in</label>
+          <input type="checkbox" name="login" id="log" value="1" data-mini="true">
+          <input type="submit" data-inline="true" value="Log in">
+        </div>
+      </form>
+    </div>-->
+    
+    
+ 
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+   
+
+    <div class="container">
+      <label for="receiver"><b>Select Receiver</b></label>
+      <input type="text" placeholder="Select Recepient" name="receiver" id ="rec" required>
+
+      <label for="amount"><b>Enter Amount</b></label>
+      <input type="number" placeholder="Enter Amount" name="amount" id ="amt" required>
+
+      <button type="submit" onclick="makeTransaction()">Send</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+</body>
+</html>
